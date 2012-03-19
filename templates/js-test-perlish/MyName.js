@@ -1,4 +1,3 @@
-// http://tokuhirom.mit-license.org
 (function () {
 "use strict";
 
@@ -15,6 +14,5 @@ if (typeof exports !== 'undefined') {
 function exampleMethod () {
     return true;
 }
-
 
 }).call(this);

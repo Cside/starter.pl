@@ -1,4 +1,4 @@
-var QUnit = require('./qunit').QUnit,
+var QUnit = require('./qunit'),
     qunitTap = require('./node-modules/qunit-tap').qunitTap,
     util = require('util'),
     fs = require('fs');
@@ -16,6 +16,8 @@ with ({
     is_deeply  : QUnit.deepEqual,
     dies_ok    : QUnit.raises,
     subtest    : QUnit.test,
+    start      : QUnit.start,
+    asyncTest  : QUnit.asyncTest,
     <?= $_->{camelized} ?> : <?= $_->{camelized} ?>,
 }) {
 
