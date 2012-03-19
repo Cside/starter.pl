@@ -13,6 +13,7 @@ if (typeof exports !== 'undefined') {
 <?= $_->{camelized} ?>.exampleMethod = exampleMethod;
 
 function exampleMethod () {
+    return true;
 }
 
 

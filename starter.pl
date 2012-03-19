@@ -89,7 +89,7 @@ sub copy_templates_to_dist {
 sub execute_startup {
 	my ($dist) = @_;
 
-	my $startup = dir($dist)->file("startup.sh")->absolute;
+	my $startup = dir($dist)->file("setup.sh")->absolute;
 	if (-e $startup) {
 		cd $dist, sub {
 			!system "/bin/sh $startup" or die $?;

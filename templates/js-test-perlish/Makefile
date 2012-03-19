@@ -1,6 +1,4 @@
 test:
-	node test/node-test.js
-test-setup:
-	npm install qunit-tap
+	node t/test/node-test.js
 
-.PHONY: test test-setup
+.PHONY: test
