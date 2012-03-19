@@ -139,7 +139,14 @@ sub select_templates {
 	$templates->[$selected-1]->cleanup;
 }
 
+sub hyphen2camel {
+    my $str = shift;
+    return join "", map {ucfirst $_} split /-/, $str if ($str =~ /-/) ;
+    $str;
+}
+
 my $module    = [ @ARGV ]->shift;
+my $camelized = hyphen2camel($module);
 my $pkg       = $module->split("::");
 my $dist      = $pkg->join("-");
 my $path      = $pkg->join("/") . ".pm";
@@ -165,6 +172,7 @@ my $opts      = {
 		'pkg'       => $pkg,
 		'dist'      => $dist,
 		'path'      => $path,
+        camelized   => $camelized,
 	},
 };
 
