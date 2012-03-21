@@ -3,6 +3,10 @@ var QUnit = require('./qunit'),
     util = require('util'),
     fs = require('fs');
 
+QUnit.like = function(actual, expected, message) {
+    QUnit.push(expected.test(actual), actual, expected.toString(), message);
+};
+
 qunitTap(QUnit, util.puts, {noPlan: true});
 
 QUnit.init();
@@ -12,7 +16,7 @@ var <?= $_->{camelized} ?> = require('../../<?= $_->{name} ?>.js');
 with ({
     ok         : QUnit.ok,
     is         : QUnit.equal,
-    like       : function (re, str) { QUnit.ok(re.test(str)) },
+    like       : QUnit.like,
     is_deeply  : QUnit.deepEqual,
     dies_ok    : QUnit.raises,
     subtest    : QUnit.test,
