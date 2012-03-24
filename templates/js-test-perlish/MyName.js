@@ -1,18 +1,14 @@
 (function () {
 "use strict";
 
-var global = this;
+var into = (typeof exports !== 'undefined') ? exports : this;
+into.<?= $_->{camelized} ?> = <?= $_->{camelized} ?>;
 
-var <?= $_->{camelized} ?>;
-if (typeof exports !== 'undefined') {
-    <?= $_->{camelized} ?> = exports;
-} else {
-    global.<?= $_->{camelized} ?> = <?= $_->{camelized} ?> = {};
+function <?= $_->{camelized} ?> () {
 }
-<?= $_->{camelized} ?>.exampleMethod = exampleMethod;
 
-function exampleMethod () {
+<?= $_->{camelized} ?>.prototype.exampleMethod = function () {
     return true;
-}
+};
 
 }).call(this);

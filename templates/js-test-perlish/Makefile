@@ -1,4 +1,7 @@
 test:
-	node t/test/node-test.js
+	prove -lv --ext=.js --exec=node t/*
+setup:
+	npm install qunit-tap
 
-.PHONY: test
+.PHONY: test test-setup
+

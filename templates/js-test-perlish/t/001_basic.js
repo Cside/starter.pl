@@ -1,12 +1,29 @@
-subtest('testName', function () {
-    ok(<?= $_->{camelized} ?>.exampleMethod, "test example");
-});
+(function () {
+"use strict";
+
+var Helper = require('./test/node-test');
+Helper.define();
+var <?= $_->{camelized} ?> = require('../<?= $_->{name} ?>').<?= $_->{camelized} ?>;
 /*
   You can use following methods:
-    * is
-    * ok
-    * like
-    * is_deeply
-    * subtest
-    * dies_ok
+    ok          : QUnit.ok,
+    test        : QUnit.test,
+    is          : QUnit.equal,
+    like        : QUnit.like,
+    is_deeply   : QUnit.deepEqual,
+    dies_ok     : QUnit.raises,
+    subtest     : QUnit.test,
+    start       : QUnit.start,
+    asyncTest   : QUnit.asyncTest,
+    done_testing: QUnit.start,
 */
+
+// Write your tests
+subtest('testName', function () {
+    var ins = new <?= $_->{camelized} ?>;
+    ok(ins.exampleMethod, "test example");
+});
+
+done_testing();
+
+}).call(this);
