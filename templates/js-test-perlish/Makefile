@@ -1,5 +1,5 @@
 test:
-	prove -lv --ext=.js --exec=node t/*
+	prove -lvc --ext=.js --exec=node t/*
 setup:
 	npm install qunit-tap
 
