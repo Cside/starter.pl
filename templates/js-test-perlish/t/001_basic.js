@@ -3,7 +3,7 @@
 
 var Helper = require('./test/node-test');
 Helper.define();
-var <?= $_->{camelized} ?> = require('../<?= $_->{name} ?>').<?= $_->{camelized} ?>;
+var <?= $_->{camelized} ?> = require('../<?= $_->{name} ?>');
 /*
   You can use following methods:
     ok          : QUnit.ok,
